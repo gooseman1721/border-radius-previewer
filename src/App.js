@@ -8,6 +8,22 @@ function App(props) {
 
   const [borders, setBorders] = useState(props.borders);
 
+  const [sliderState, setArraySliderStateRoot] = useState({
+    tr: 0,
+    tl: 0,
+    bl: 0,
+    br: 0,
+});
+
+
+  function getSliderArrayValues()
+  {
+    alert(`TR: ${sliderState.tr}, TL: ${sliderState.tl}
+    BL: ${sliderState.bl}, BR: ${sliderState.br}`);
+    console.log(sliderState);
+  }
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +34,11 @@ function App(props) {
         </div>
       </header>
       <div className='container'>
-        
-        <BoxSliderArray></BoxSliderArray>
+
+        <BoxSliderArray 
+          setArraySliderStateRoot={setArraySliderStateRoot}>
+          getValuesButton={getSliderArrayValues}
+        </BoxSliderArray>
 
         <div id='boxDiv' style={{
           display: "flex",
@@ -27,6 +46,11 @@ function App(props) {
           alignItems: "center"
         }}>
         <ShapeshifterBox></ShapeshifterBox>
+        <button 
+            id='getSliderArrayValuesButton' 
+            className='basicButton'
+            onClick={getSliderArrayValues}
+            >Get values</button>
         </div>
       </div>
 

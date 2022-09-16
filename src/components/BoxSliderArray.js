@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import BoxSlider from './BoxSlider'
 
-export default function BoxSliderArray() {
+export default function BoxSliderArray(props) {
 
     const [sliderState, setArraySliderState] = useState({
         tr: 0,
@@ -23,22 +23,22 @@ export default function BoxSliderArray() {
     <div id='sliderArrayContainer' className='box'>
         <div id='sliderArray'>
             <BoxSlider 
-                setArraySliderState={setArraySliderState}
+                setArraySliderState={props.setArraySliderStateRoot}
                 corner="tr"></BoxSlider>
             <BoxSlider
-                setArraySliderState={setArraySliderState}
+                setArraySliderState={props.setArraySliderStateRoot}
                 corner="tl"></BoxSlider>
             <BoxSlider
-                setArraySliderState={setArraySliderState}
+                setArraySliderState={props.setArraySliderStateRoot}
                 corner="bl"></BoxSlider>
             <BoxSlider
-                setArraySliderState={setArraySliderState}
+                setArraySliderState={props.setArraySliderStateRoot}
                 corner="br"></BoxSlider>
         </div>
         <button 
             id='getSliderArrayValuesButton' 
             className='basicButton'
-            onClick={getSliderArrayValues}
+            onClick={props.getValuesButton}
             >Get values</button>
         
     </div>
