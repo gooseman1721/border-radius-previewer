@@ -26,10 +26,16 @@
 
 }
 
-#sliderContainer
+#sliderArrayContainer
 {
   background-color: bisque;
   height: 25em;
+  width: 10em;
+}
+
+#sliderArray
+{
+  height: 90%;
   width: 10em;
   display: flex;
   justify-content: space-evenly;

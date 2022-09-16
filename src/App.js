@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import ShapeshifterBox from './components/ShapeshifterBox';
 import BoxSlider from './components/BoxSlider';
+import BoxSliderArray from './components/BoxSliderArray';
 
 function App(props) {
 
@@ -17,19 +18,9 @@ function App(props) {
         </div>
       </header>
       <div className='container'>
-        <div id='sliderContainer' className='box'>
+        
+        <BoxSliderArray></BoxSliderArray>
 
-          {/* <div className='sliderWrapper'>
-            <input type="range" id="slider3" className='slider' />
-          </div> */}
-          <BoxSlider></BoxSlider>
-          <BoxSlider></BoxSlider>
-          <BoxSlider></BoxSlider>
-          <BoxSlider></BoxSlider>
-          
-     
-          
-        </div>
         <div id='boxDiv' style={{
           display: "flex",
           justifyContent: "center",
