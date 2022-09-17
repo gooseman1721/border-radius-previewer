@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const DEFAULT_BORDERS = ["10%", "10%", "10%", "10%"]
+const DEFAULT_BORDERS = ["10% 10% 10% 10%"]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -8,6 +8,12 @@
   --shapeshifterBoxRightMargin: calc(var(--containerGap) + var(--sliderContainerWidth));
 }
 
+.App
+{
+  display: flex;
+  flex-direction: column;
+}
+
 .titleText
 {
   text-align: center;
@@ -17,7 +23,7 @@
   justify-content: center;
 }
 
-.container
+.container, .bottomControlPanel
 {
   display: flex;
   margin: 3em;
@@ -45,7 +51,8 @@
 
 #shapeshifterBox
 {
-  background-color: aquamarine;
+  /* background-color: rgb(162, 23, 197); */
+  background-image: linear-gradient(225deg, rgb(160, 10, 190), rgb(197, 48, 140));
   height: 25em;
   width: 25em;
   display: 'flex';
@@ -54,12 +61,14 @@
   justify-content: center;
   border-radius: 0% 0% 2% 10%;
   margin-right: var(--shapeshifterBoxRightMargin);
+  text-align: center;
 
 }
 
 .box
 {
-  border: 1px solid #666;
+  border: 5px solid rgb(44, 19, 19);
+  box-shadow: 10px 10px rgba(99, 108, 110, 0.5);
 
 }
 

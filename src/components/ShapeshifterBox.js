@@ -1,14 +1,13 @@
 import React from 'react'
 
-export default function ShapeshifterBox() {
-
-  const shapeshifterBoxStyle = {
-    borderRadius: '40% 10% 15% 19%',
-  };
+export default function ShapeshifterBox(props) {
+  const styleBorderRadius = props.styleBorderRadius;
 
   return (
-    <div id='shapeshifterBox' className='box' style={shapeshifterBoxStyle}>
-        This is inside the box
+    <div id='shapeshifterBox' className='box' style={{
+      borderRadius: props.styleBorderRadius
+    }}>
+        This is inside the box {props.styleBorderRadius}
     </div>
   )
 }

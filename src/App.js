@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import ShapeshifterBox from './components/ShapeshifterBox';
 import BoxSlider from './components/BoxSlider';
@@ -13,14 +13,22 @@ function App(props) {
     tl: 0,
     bl: 0,
     br: 0,
-});
-
+  });
+  
+  useEffect(() => {
+    setBorders(makeBorderRadiusString(sliderState))
+  }, [sliderState])
 
   function getSliderArrayValues()
   {
     alert(`TR: ${sliderState.tr}, TL: ${sliderState.tl}
     BL: ${sliderState.bl}, BR: ${sliderState.br}`);
     console.log(sliderState);
+  }
+
+  function makeBorderRadiusString(sliderStateObj)
+  {
+    return `${sliderStateObj.tr}% ${sliderStateObj.tl}% ${sliderStateObj.bl}% ${sliderStateObj.br}%`;
   }
 
 
@@ -44,14 +52,19 @@ function App(props) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center"
-        }}>
-        <ShapeshifterBox></ShapeshifterBox>
+          }}>
+          <ShapeshifterBox styleBorderRadius={borders}></ShapeshifterBox>
+
+        </div>
+
+
+      </div>
+      <div className='bottomControlPanel'>
         <button 
             id='getSliderArrayValuesButton' 
             className='basicButton'
             onClick={getSliderArrayValues}
             >Get values</button>
-        </div>
       </div>
 
       
