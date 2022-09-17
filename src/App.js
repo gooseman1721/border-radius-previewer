@@ -1,12 +1,20 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import ShapeshifterBox from './components/ShapeshifterBox';
-import BoxSlider from './components/BoxSlider';
 import BoxSliderArray from './components/BoxSliderArray';
 
 function App(props) {
 
+  // This keeps the dynamically updated string with CSS
+  // border-radius property determining the roundness of
+  // ShapeshifterBox. 
+  // Updated by useEffect with sliderState
+  // Sent to ShapeshifterBox
+
   const [borders, setBorders] = useState(props.borders);
+
+  // This keeps an object with values from BoxSliderArray.
+  // Updated by BoxSliderArray <= BoxSlider
 
   const [sliderState, setArraySliderStateRoot] = useState({
     tr: 0,
@@ -25,6 +33,9 @@ function App(props) {
     BL: ${sliderState.bl}, BR: ${sliderState.br}`);
     console.log(sliderState);
   }
+
+  // Converts an object with slider values to a string
+  // that can be used in CSS
 
   function makeBorderRadiusString(sliderStateObj)
   {

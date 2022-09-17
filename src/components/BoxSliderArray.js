@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import BoxSlider from './BoxSlider'
 
+// This component is a box with 4 BoxSlider components.
+// BoxSliders update App component state and bypass BoxSliderArray
+
 export default function BoxSliderArray(props) {
 
     const [sliderState, setArraySliderState] = useState({
