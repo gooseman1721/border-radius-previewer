@@ -12,6 +12,8 @@
 {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  
 }
 
 .titleText
@@ -26,7 +28,7 @@
 .container, .bottomControlPanel
 {
   display: flex;
-  margin: 3em;
+  margin: 2em;
   justify-content: center;
   gap: 3em;
 
@@ -65,10 +67,17 @@
 
 }
 
+#shapeshifterBoxText
+{
+  margin-top: 6em;
+  font-weight: bold;
+  font-size: 28px;
+}
+
 .box
 {
   border: 5px solid rgb(44, 19, 19);
-  box-shadow: 10px 10px rgba(99, 108, 110, 0.5);
+  box-shadow: 10px 10px 3px rgba(99, 108, 110, 0.5);
 
 }
 
@@ -105,5 +114,13 @@
   transform-origin: 75px 75px;
   transform: translate(-37px, 85px);
   text-align: center;
+}
+
+.bottomControlPanel
+{
+  background-color: black;
+  width: 30em;
+  height: 7em;
+  border: 5px solid rgb(0, 0, 0);
 }
 

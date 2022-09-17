@@ -48,8 +48,7 @@ function App(props) {
       <header className="App-header">
         <div className="titleText">
           <h1>Manipulate the shape below!</h1>
-          <br></br>
-          [|]
+          
         </div>
       </header>
       <div className='container'>
@@ -70,7 +69,7 @@ function App(props) {
 
 
       </div>
-      <div className='bottomControlPanel'>
+      <div className='bottomControlPanel box'>
         <button 
             id='getSliderArrayValuesButton' 
             className='basicButton'

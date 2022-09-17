@@ -10,7 +10,9 @@ export default function ShapeshifterBox(props) {
     <div id='shapeshifterBox' className='box' style={{
       borderRadius: props.styleBorderRadius
     }}>
-        This is inside the box {props.styleBorderRadius}
+        <div id='shapeshifterBoxText'>
+          {props.styleBorderRadius}
+        </div>
     </div>
   )
 }
