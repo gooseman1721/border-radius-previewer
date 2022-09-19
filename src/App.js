@@ -35,8 +35,8 @@ function App(props) {
 
   function getSliderArrayValues()
   {
-    alert(`TR: ${sliderState.tr}, TL: ${sliderState.tl}
-    BL: ${sliderState.bl}, BR: ${sliderState.br}`);
+    alert(`TL: ${sliderState.tr}, TR: ${sliderState.tl}
+    BR: ${sliderState.bl}, BL: ${sliderState.br}`);
     console.log(sliderState);
   }
 
@@ -45,7 +45,7 @@ function App(props) {
 
   function makeBorderRadiusString(sliderStateObj)
   {
-    return `${sliderStateObj.tr}% ${sliderStateObj.tl}% ${sliderStateObj.bl}% ${sliderStateObj.br}%`;
+    return `${sliderStateObj.tl}% ${sliderStateObj.tr}% ${sliderStateObj.br}% ${sliderStateObj.bl}%`;
   }
 
   function copyTextBoxTextToClipboard()

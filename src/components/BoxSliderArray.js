@@ -27,16 +27,16 @@ export default function BoxSliderArray(props) {
         <div id='sliderArray'>
             <BoxSlider 
                 setArraySliderState={props.setArraySliderStateRoot}
-                corner="tr"></BoxSlider>
-            <BoxSlider
-                setArraySliderState={props.setArraySliderStateRoot}
                 corner="tl"></BoxSlider>
             <BoxSlider
                 setArraySliderState={props.setArraySliderStateRoot}
-                corner="bl"></BoxSlider>
+                corner="tr"></BoxSlider>
             <BoxSlider
                 setArraySliderState={props.setArraySliderStateRoot}
                 corner="br"></BoxSlider>
+            <BoxSlider
+                setArraySliderState={props.setArraySliderStateRoot}
+                corner="bl"></BoxSlider>
         </div>
         <button 
             id='getSliderArrayValuesButton' 
