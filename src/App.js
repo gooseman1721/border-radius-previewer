@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import ShapeshifterBox from './components/ShapeshifterBox';
 import BoxSliderArray from './components/BoxSliderArray';
+import BackgroundBoxes from './components/BackgroundBoxes';
 
 function App(props) {
 
@@ -28,17 +29,6 @@ function App(props) {
   useEffect(() => {
     setBorders(makeBorderRadiusString(sliderState))
   }, [sliderState])
-
-  const background_rows = [];
-
-  for (let i = 0; i < 25; i++)
-  {
-    background_rows.push(<ShapeshifterBox 
-                          styleBorderRadius={borders}
-                          boxStyle={'shapeshifterBoxBackground'}
-                          animationDelay={`${i*200}ms`}>
-                          </ShapeshifterBox>)
-  }
 
   function getSliderArrayValues()
   {
@@ -98,9 +88,7 @@ function App(props) {
           
       </div>
       <div className='background'>
-        <div className='backgroundRow'>
-          {background_rows}
-        </div>        
+        <BackgroundBoxes borders={borders}></BackgroundBoxes> 
 
       </div>
     </div>

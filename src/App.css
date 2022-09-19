@@ -111,10 +111,10 @@
 
 .shapeshifterBoxBackground
 {
-  height: 3em;
-  width: 3em;
+  height: 4em;
+  width: 4em;
   visibility: hidden;
-  animation-duration: 5s;
+  animation-duration: 7s;
   animation-name: slidetoleft;
   animation-iteration-count: infinite;
   animation-direction: normal;
@@ -124,6 +124,7 @@
   display: flex;
   border: 3px solid rgb(44, 19, 19) !important;
 }
+
 
 @keyframes slidetoleft 
 {
@@ -136,7 +137,7 @@
 
   100%
   {
-    left: -5%;
+    left: -15%;
     bottom: 10%;
   }
 

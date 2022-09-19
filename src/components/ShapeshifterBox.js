@@ -5,9 +5,10 @@ import React from 'react'
 // from App component on every render (useEffect hook)
 
 export default function ShapeshifterBox(props) {
-
-  const cssStyle = props.animationDelay ? {borderRadius: props.styleBorderRadius,
-  animationDelay: props.animationDelay}:{borderRadius: props.styleBorderRadius};
+  
+  const cssStyle = props.animationDelay ? 
+  {borderRadius: props.styleBorderRadius, animationDelay: props.animationDelay, transform: `translateY(${props.animationOffset})`}:
+  {borderRadius: props.styleBorderRadius, transform: `translateY(${props.animationOffset})`};
 
   return (
     <div className={`box ${props.boxStyle}`} style={cssStyle}>
