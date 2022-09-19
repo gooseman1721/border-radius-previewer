@@ -51,7 +51,7 @@ function App(props) {
   function copyTextBoxTextToClipboard()
   {
     navigator.clipboard.writeText(`border-radius: ${borders};`);
-    alert(`Copied to clipboard: \n border-radius: ${borders};`);
+    alert(`Copied to clipboard:\n border-radius: ${borders};`);
   }
 
   function changeBackgroundState()
