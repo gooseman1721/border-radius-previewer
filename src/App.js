@@ -3,6 +3,7 @@ import './App.css';
 import ShapeshifterBox from './components/ShapeshifterBox';
 import BoxSliderArray from './components/BoxSliderArray';
 import BackgroundBoxes from './components/BackgroundBoxes';
+import TextBox from './components/TextBox';
 
 function App(props) {
 
@@ -47,6 +48,12 @@ function App(props) {
     return `${sliderStateObj.tr}% ${sliderStateObj.tl}% ${sliderStateObj.bl}% ${sliderStateObj.br}%`;
   }
 
+  function copyTextBoxTextToClipboard()
+  {
+    navigator.clipboard.writeText(`border-radius: ${borders};`);
+    alert(`Copied to clipboard: \n border-radius: ${borders};`);
+  }
+
   function changeBackgroundState()
   {
     setBackgroundVisible(!backgroundVisible);
@@ -85,16 +92,22 @@ function App(props) {
 
         </div>
         <div className='bottomControlPanel box'>
+          <div className='bottomControlPanelButtons'>
           <button 
               id='getSliderArrayValuesButton' 
               className='basicButton'
-              onClick={getSliderArrayValues}
-              >Get values</button>
-            <button 
+              onClick={copyTextBoxTextToClipboard}
+              >Copy CSS</button>
+          <button 
               id='getSliderArrayValuesButton' 
               className='basicButton'
               onClick={changeBackgroundState}
               >Background {backgroundVisible ? "on":"no"}</button>
+          </div>
+
+          <TextBox textBoxValue={borders}></TextBox>
+
+
         </div>
 
           
