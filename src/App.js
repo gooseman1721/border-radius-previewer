@@ -30,6 +30,8 @@ function App(props) {
     setBorders(makeBorderRadiusString(sliderState))
   }, [sliderState])
 
+  const [backgroundVisible, setBackgroundVisible] = useState(true);
+
   function getSliderArrayValues()
   {
     alert(`TR: ${sliderState.tr}, TL: ${sliderState.tl}
@@ -43,6 +45,11 @@ function App(props) {
   function makeBorderRadiusString(sliderStateObj)
   {
     return `${sliderStateObj.tr}% ${sliderStateObj.tl}% ${sliderStateObj.bl}% ${sliderStateObj.br}%`;
+  }
+
+  function changeBackgroundState()
+  {
+    setBackgroundVisible(!backgroundVisible);
   }
 
 
@@ -83,12 +90,17 @@ function App(props) {
               className='basicButton'
               onClick={getSliderArrayValues}
               >Get values</button>
+            <button 
+              id='getSliderArrayValuesButton' 
+              className='basicButton'
+              onClick={changeBackgroundState}
+              >Background {backgroundVisible ? "on":"no"}</button>
         </div>
 
           
       </div>
       <div className='background'>
-        <BackgroundBoxes borders={borders}></BackgroundBoxes> 
+        <BackgroundBoxes borders={borders} visible={backgroundVisible}></BackgroundBoxes> 
 
       </div>
     </div>

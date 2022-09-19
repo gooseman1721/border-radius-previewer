@@ -5,6 +5,11 @@ export default function BackgroundBoxes(props) {
 
     const background_rows = [];
 
+    if (!props.visible)
+    {
+        return null;
+    }
+
     for (let i = -7; i <= 7; i++)
     {
       for (let j = 0; j < 25; j++)
