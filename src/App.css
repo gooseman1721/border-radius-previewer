@@ -8,12 +8,47 @@
   --shapeshifterBoxRightMargin: calc(var(--containerGap) + var(--sliderContainerWidth));
 }
 
+
 .App
+{
+  display: flex;
+}
+
+.appContent
 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(250, 250, 250, 0);
+  position: absolute;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   
+}
+
+.background
+{
+  background-color: rgb(241, 234, 223);
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  
+  height: 100%;
+  width: 100%;
+
+}
+
+.backgroundRow
+{
+  height: 100%;
+  width: 100%;
+
 }
 
 .titleText
@@ -51,7 +86,7 @@
 
 }
 
-#shapeshifterBox
+.shapeshifterBox
 {
   /* background-color: rgb(162, 23, 197); */
   background-image: linear-gradient(225deg, rgb(160, 10, 190), rgb(197, 48, 140));
@@ -67,18 +102,57 @@
 
 }
 
-#shapeshifterBoxText
+.shapeshifterBoxText
 {
   margin-top: 6em;
   font-weight: bold;
   font-size: 28px;
 }
 
+.shapeshifterBoxBackground
+{
+  height: 3em;
+  width: 3em;
+  visibility: hidden;
+  animation-duration: 5s;
+  animation-name: slidetoleft;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  position: absolute;
+  display: flex;
+  border: 3px solid rgb(44, 19, 19) !important;
+}
+
+@keyframes slidetoleft 
+{
+  0%
+  {
+    visibility: visible;
+    left: 100%;
+    bottom: 90%;
+  }
+
+  100%
+  {
+    left: -5%;
+    bottom: 10%;
+  }
+
+}
+
+.shapeshifterBoxBackground .shapeshifterBoxText
+{
+  display: none;
+}
+
+
 .box
 {
   border: 5px solid rgb(44, 19, 19);
   box-shadow: 10px 10px 3px rgba(99, 108, 110, 0.5);
-
+  overflow: hidden;
 }
 
 .sliderWrapper

@@ -6,11 +6,12 @@ import React from 'react'
 
 export default function ShapeshifterBox(props) {
 
+  const cssStyle = props.animationDelay ? {borderRadius: props.styleBorderRadius,
+  animationDelay: props.animationDelay}:{borderRadius: props.styleBorderRadius};
+
   return (
-    <div id='shapeshifterBox' className='box' style={{
-      borderRadius: props.styleBorderRadius
-    }}>
-        <div id='shapeshifterBoxText'>
+    <div className={`box ${props.boxStyle}`} style={cssStyle}>
+        <div className='shapeshifterBoxText'>
           {props.styleBorderRadius}
         </div>
     </div>

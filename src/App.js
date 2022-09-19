@@ -5,6 +5,8 @@ import BoxSliderArray from './components/BoxSliderArray';
 
 function App(props) {
 
+
+
   // This keeps the dynamically updated string with CSS
   // border-radius property determining the roundness of
   // ShapeshifterBox. 
@@ -27,6 +29,17 @@ function App(props) {
     setBorders(makeBorderRadiusString(sliderState))
   }, [sliderState])
 
+  const background_rows = [];
+
+  for (let i = 0; i < 25; i++)
+  {
+    background_rows.push(<ShapeshifterBox 
+                          styleBorderRadius={borders}
+                          boxStyle={'shapeshifterBoxBackground'}
+                          animationDelay={`${i*200}ms`}>
+                          </ShapeshifterBox>)
+  }
+
   function getSliderArrayValues()
   {
     alert(`TR: ${sliderState.tr}, TL: ${sliderState.tl}
@@ -44,41 +57,54 @@ function App(props) {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="titleText">
-          <h1>Manipulate the shape below!</h1>
+
+    <div className='App'>
+      <div className="appContent">
+        <header className="App-header">
+          <div className="titleText">
+            <h1>Manipulate the shape below!</h1>
+
+          </div>
+        </header>
+        <div className='container'>
+
+          <BoxSliderArray 
+          setArraySliderStateRoot={setArraySliderStateRoot}
+          getValuesButton={getSliderArrayValues}>
+          </BoxSliderArray>
+
+          <div id='boxDiv' style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            }}>
+            <ShapeshifterBox 
+            styleBorderRadius={borders} 
+            boxStyle={'shapeshifterBox'}>
+            </ShapeshifterBox>
+
+          </div>
+
+
+        </div>
+        <div className='bottomControlPanel box'>
+          <button 
+              id='getSliderArrayValuesButton' 
+              className='basicButton'
+              onClick={getSliderArrayValues}
+              >Get values</button>
+        </div>
+
           
-        </div>
-      </header>
-      <div className='container'>
-
-        <BoxSliderArray 
-          setArraySliderStateRoot={setArraySliderStateRoot}>
-          getValuesButton={getSliderArrayValues}
-        </BoxSliderArray>
-
-        <div id='boxDiv' style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center"
-          }}>
-          <ShapeshifterBox styleBorderRadius={borders}></ShapeshifterBox>
-
-        </div>
-
+      </div>
+      <div className='background'>
+        <div className='backgroundRow'>
+          {background_rows}
+        </div>        
 
       </div>
-      <div className='bottomControlPanel box'>
-        <button 
-            id='getSliderArrayValuesButton' 
-            className='basicButton'
-            onClick={getSliderArrayValues}
-            >Get values</button>
-      </div>
-
-      
     </div>
+
   );
 }
 
